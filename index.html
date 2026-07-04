@@ -39,7 +39,9 @@ nav{
   transition:box-shadow .3s;
 }
 .nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-.nav-logo img{height:44px;width:auto}
+.nav-logo img{height:60px;width:auto}
+/* branded placeholder when a container photo file isn't present yet */
+.logo-fallback{object-fit:contain!important;background:var(--linen);padding:14%}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{color:var(--brown-mid);text-decoration:none;font-size:.9rem;font-weight:600;transition:color .2s}
 .nav-links a:hover{color:var(--tomato)}
@@ -473,7 +475,7 @@ footer{
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
 }
 .footer-logo{display:flex;align-items:center;gap:.6rem}
-.footer-logo img{height:46px;width:auto}
+.footer-logo img{height:58px;width:auto}
 .footer-links{display:flex;gap:2rem;flex-wrap:wrap}
 .footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.8rem;transition:color .2s}
 .footer-links a:hover{color:white}
@@ -566,7 +568,7 @@ footer{
 
   <div class="hero-right anim a2" style="position:relative">
     <div class="container-float">
-      <div class="cf-img"><img src="assets/container-takeout-boxes.png" alt="Quzyn container"></div>
+      <div class="cf-img"><img src="assets/container-takeout-boxes.png" alt="Quzyn container" onerror="this.onerror=null;this.src='assets/quzyn-logo.svg';this.classList.add('logo-fallback')"></div>
       <div class="cf-text">
         <strong>Free container kit</strong>
         For every new chef who signs up
@@ -1202,13 +1204,13 @@ footer{
     <div style="position:relative">
       <div class="container-collage">
         <div class="ct-img ct-main">
-          <img src="assets/container-kraft-salad.png" alt="Eco kraft Quzyn container with salad">
+          <img src="assets/container-kraft-salad.png" alt="Eco kraft Quzyn container with salad" onerror="this.onerror=null;this.src='assets/quzyn-logo.svg';this.classList.add('logo-fallback')">
         </div>
         <div class="ct-img ct-sub">
-          <img src="assets/container-takeout-boxes.png" alt="White takeout boxes with food">
+          <img src="assets/container-takeout-boxes.png" alt="White takeout boxes with food" onerror="this.onerror=null;this.src='assets/quzyn-logo.svg';this.classList.add('logo-fallback')">
         </div>
         <div class="ct-img ct-sub">
-          <img src="assets/container-soup-cup.png" alt="Soup cup with chicken noodle">
+          <img src="assets/container-soup-cup.png" alt="Soup cup with chicken noodle" onerror="this.onerror=null;this.src='assets/quzyn-logo.svg';this.classList.add('logo-fallback')">
         </div>
         <div class="ct-logo-badge">
           <img src="assets/quzyn-logo.svg" alt="Quzyn logo">
