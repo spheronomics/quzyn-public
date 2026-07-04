@@ -117,22 +117,20 @@ nav{
   position:relative;
   display:grid;
   grid-template-columns:1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:.9rem;
+  grid-template-rows:1fr 1fr;
+  gap:.8rem;
+  min-height:500px;
 }
-.hc-main{
-  grid-column:1/3;
-  border-radius:20px;overflow:hidden;
-  height:280px;position:relative;
+.hc-cook,.hc-food,.hc-map,.hc-eat{
+  border-radius:16px;overflow:hidden;position:relative;
   box-shadow:var(--card-shadow);
 }
-.hc-main img{width:100%;height:100%;object-fit:cover}
-.hc-sub{
-  border-radius:16px;overflow:hidden;
-  height:180px;position:relative;
-  box-shadow:var(--card-shadow);
+.hc-cook img,.hc-food img,.hc-map img,.hc-eat img{
+  width:100%;height:100%;object-fit:cover;display:block;
 }
-.hc-sub img{width:100%;height:100%;object-fit:cover}
+.hc-cook img{object-position:center bottom}
+.hc-eat img{object-position:center bottom}
+.hc-map img{object-position:center 45%}
 /* dish label overlay */
 .dish-label{
   position:absolute;bottom:0;left:0;right:0;
@@ -581,12 +579,12 @@ footer{
   <div class="hero-left">
     <div class="hero-tag anim">Home cooking, rediscovered</div>
     <h1 class="anim a1">
-      Your neighbor<br>
-      is an <em>incredible</em><br>
-      <span class="hl">cook.</span>
+      There are <em>incredible</em><br>
+      cooks in your<br>
+      <span class="hl">neighborhood.</span>
     </h1>
     <p class="hero-sub anim a2">
-      Quzyn puts real home chefs on the map — Texas BBQ, Italian ragù, Nigerian jollof, Chinese dumplings, Thai curry, Vietnamese pho, and more. Order fresh, authentic, home-cooked meals from neighbors who genuinely love to cook. Or turn your own kitchen into income.
+      Quzyn puts real home chefs on the map — order fresh, authentic, home-cooked meals from neighbors who genuinely love to cook. And it's a flexible way for stay-at-home and single parents to turn the food they already make into real income — on their own schedule, right from their own kitchen, without leaving their kids.
     </p>
     <div class="hero-actions anim a3">
       <a href="#food" class="btn-red">🗺️ Find food near me</a>
@@ -612,30 +610,17 @@ footer{
       </div>
     </div>
     <div class="hero-collage">
-      <div class="hc-main">
-        <div class="live-badge"><span class="live-dot"></span> 12 chefs cooking now</div>
-        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=900&q=85" alt="Home cooked food spread">
-        <div class="dish-label">
-          <span class="flag">🇮🇹 Italian</span>
-          <span class="name">Fresh Pasta Ragù</span>
-          <span class="chef">Maria C. · 0.7 mi · $17</span>
-        </div>
+      <div class="hc-cook">
+        <img src="assets/hero-cook.jpg" alt="A home chef cooking with love in her own kitchen" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
       </div>
-      <div class="hc-sub">
-        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&q=85" alt="Indian curry">
-        <div class="dish-label">
-          <span class="flag">🇮🇳 Indian</span>
-          <span class="name">Lamb Rogan Josh</span>
-          <span class="chef">Priya M. · 0.8 mi · $16</span>
-        </div>
+      <div class="hc-food">
+        <img src="assets/hero-food.jpg" alt="A variety of fresh home-cooked dishes" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
       </div>
-      <div class="hc-sub">
-        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=500&q=85" alt="Smoked BBQ brisket">
-        <div class="dish-label">
-          <span class="flag">🇺🇸 Texas BBQ</span>
-          <span class="name">Smoked Brisket</span>
-          <span class="chef">Travis W. · 0.9 mi · $19</span>
-        </div>
+      <div class="hc-map">
+        <img src="assets/hero-map2.jpg" alt="Home chefs on the map in your neighborhood" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
+      </div>
+      <div class="hc-eat">
+        <img src="assets/hero-eat.jpg" alt="A happy customer enjoying a fresh, homemade Quzyn meal" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
       </div>
     </div>
   </div>
