@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quzyn — Home Cooking from Every Culture, Right Around the Corner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sun:#F7A800;
+  --sun-pale:#FEF3D0;
+  --tomato:#D94F2B;
+  --tomato-pale:#FDEEE9;
+  --sage:#4A7C59;
+  --sage-pale:#EAF2ED;
+  --cream:#FFFDF7;
+  --warm-white:#FFF9EE;
+  --linen:#F5EDD8;
+  --brown:#2E1F14;
+  --brown-mid:#7A5C4A;
+  --muted:#9E8878;
+  --border:#EDE0CC;
+  --card-shadow:0 8px 40px rgba(46,31,20,0.10);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--brown);font-family:'Nunito',sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 3rem;
+  background:rgba(255,253,247,0.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--brown-mid);text-decoration:none;font-size:.9rem;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--tomato)}
+.nav-cta{
+  background:var(--tomato);color:white!important;
+  padding:.55rem 1.4rem;border-radius:100px;font-weight:700!important;
+  box-shadow:0 3px 14px rgba(217,79,43,0.28);
+  transition:transform .15s,box-shadow .2s!important;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(217,79,43,0.4)!important}
+
+/* ── HERO ── */
+.hero{
+  padding:8rem 3rem 3rem;
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1.05fr;
+  gap:4rem;align-items:center;
+}
+.hero-tag{
+  font-family:'Caveat',cursive;font-size:1.35rem;font-weight:600;
+  color:var(--sage);margin-bottom:.7rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.hero-tag::before{content:'';display:inline-block;width:28px;height:2px;background:var(--sage);border-radius:2px}
+.hero h1{
+  font-family:'Lora',serif;
+  font-size:clamp(2.6rem,4.5vw,4.4rem);
+  font-weight:700;line-height:1.08;letter-spacing:-0.02em;
+  color:var(--brown);margin-bottom:1.3rem;
+}
+.hero h1 em{font-style:italic;color:var(--tomato)}
+.hl{position:relative;display:inline-block}
+.hl::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:5px;
+  background:var(--sun);border-radius:3px;opacity:.65;
+}
+.hero-sub{
+  font-size:1.06rem;line-height:1.8;color:var(--brown-mid);
+  max-width:500px;margin-bottom:2rem;font-weight:400;
+}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem}
+
+.btn-red{
+  background:var(--tomato);color:white;
+  padding:.85rem 2rem;border-radius:100px;font-weight:800;font-size:.98rem;
+  text-decoration:none;border:none;cursor:pointer;
+  font-family:'Nunito',sans-serif;
+  box-shadow:0 4px 20px rgba(217,79,43,0.3);
+  transition:transform .15s,box-shadow .2s;display:inline-block;
+}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(217,79,43,0.42)}
+.btn-outline{
+  background:white;color:var(--brown);
+  padding:.85rem 1.8rem;border-radius:100px;font-weight:700;font-size:.98rem;
+  border:2px solid var(--border);text-decoration:none;cursor:pointer;
+  font-family:'Nunito',sans-serif;
+  transition:border-color .2s,background .2s;display:inline-block;
+}
+.btn-outline:hover{border-color:var(--sun);background:var(--sun-pale)}
+
+.hero-trust{display:flex;align-items:center;gap:1rem;font-size:.84rem;color:var(--muted);flex-wrap:wrap}
+.avatars{display:flex}
+.av{
+  width:34px;height:34px;border-radius:50%;border:2.5px solid white;
+  overflow:hidden;background:var(--linen);flex-shrink:0;margin-left:-8px;
+}
+.av:first-child{margin-left:0}
+.av img{width:100%;height:100%;object-fit:cover}
+.trust-text strong{color:var(--brown);font-weight:700}
+
+/* ── HERO RIGHT: FOOD PHOTO COLLAGE ── */
+.hero-collage{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:.9rem;
+}
+.hc-main{
+  grid-column:1/3;
+  border-radius:20px;overflow:hidden;
+  height:280px;position:relative;
+  box-shadow:var(--card-shadow);
+}
+.hc-main img{width:100%;height:100%;object-fit:cover}
+.hc-sub{
+  border-radius:16px;overflow:hidden;
+  height:180px;position:relative;
+  box-shadow:var(--card-shadow);
+}
+.hc-sub img{width:100%;height:100%;object-fit:cover}
+/* dish label overlay */
+.dish-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(46,31,20,.75) 0%,transparent 100%);
+  padding:.8rem 1rem .6rem;
+}
+.dish-label .flag{font-size:.85rem}
+.dish-label .name{
+  font-family:'Lora',serif;font-size:.95rem;font-weight:700;color:white;
+  display:block;margin-top:.1rem;line-height:1.2;
+}
+.dish-label .chef{font-size:.72rem;color:rgba(255,255,255,.7);margin-top:.1rem;display:block}
+
+/* live badge */
+.live-badge{
+  position:absolute;top:10px;left:10px;
+  background:var(--tomato);color:white;
+  border-radius:100px;padding:.3rem .75rem;
+  font-size:.68rem;font-weight:800;letter-spacing:.05em;
+  display:flex;align-items:center;gap:.4rem;
+  box-shadow:0 2px 10px rgba(217,79,43,.35);
+}
+.live-dot{width:6px;height:6px;background:white;border-radius:50%;animation:blink 1s ease infinite}
+
+/* container badge floating */
+.container-float{
+  position:absolute;top:-18px;right:-18px;
+  background:white;border-radius:16px;
+  padding:.75rem 1rem;
+  box-shadow:0 8px 30px rgba(46,31,20,.14);
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;gap:.7rem;
+  z-index:10;animation:float 4s ease-in-out infinite;
+}
+.cf-img{width:40px;height:40px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.cf-img img{width:100%;height:100%;object-fit:cover}
+.cf-text{font-size:.75rem;color:var(--brown-mid);line-height:1.4}
+.cf-text strong{color:var(--brown);font-size:.8rem;display:block;margin-bottom:.1rem}
+
+/* ── MARQUEE ── */
+.marquee-band{background:var(--sun);padding:.85rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:scroll-left 38s linear infinite}
+.marquee-item{
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:0 1.8rem;
+  font-family:'Caveat',cursive;font-size:1.2rem;font-weight:600;color:var(--brown);
+}
+.msep{color:rgba(46,31,20,.35);font-size:.45rem}
+
+/* ── FOOD GRID (real photos) ── */
+.food-section{padding:6rem 3rem;background:var(--warm-white)}
+.food-inner{max-width:1320px;margin:0 auto}
+.sec-tag{font-family:'Caveat',cursive;font-size:1.15rem;font-weight:600;color:var(--sage);margin-bottom:.5rem}
+.sec-h2{
+  font-family:'Lora',serif;font-size:clamp(1.9rem,3.5vw,3rem);
+  font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--brown);margin-bottom:.6rem;
+}
+.sec-h2 em{font-style:italic;color:var(--tomato)}
+.sec-sub{font-size:.95rem;color:var(--brown-mid);line-height:1.7;max-width:560px;margin-bottom:3rem}
+
+/* Masonry-style food photo grid */
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:220px 220px;
+  gap:1rem;
+}
+.food-tile{
+  border-radius:18px;overflow:hidden;position:relative;cursor:pointer;
+  transition:transform .3s,box-shadow .3s;
+}
+.food-tile:hover{transform:scale(1.02);box-shadow:0 20px 50px rgba(46,31,20,.18)}
+.food-tile:hover .dish-label{padding-bottom:.9rem}
+.food-tile img{width:100%;height:100%;object-fit:cover;display:block}
+/* span variations */
+.ft-wide{grid-column:span 2}
+.ft-tall{grid-row:span 2}
+
+/* ── MAP SECTION ── */
+.map-section{padding:6rem 3rem;background:var(--cream)}
+.map-inner{max-width:1300px;margin:0 auto}
+.map-layout{display:grid;grid-template-columns:340px 1fr;gap:2.5rem;align-items:start;margin-top:2.5rem}
+
+/* sidebar */
+.nearby-list{display:flex;flex-direction:column;gap:.7rem;max-height:520px;overflow-y:auto}
+.nearby-item{
+  background:white;border-radius:14px;padding:.85rem 1rem;
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;gap:.8rem;cursor:pointer;
+  transition:border-color .2s,box-shadow .2s,transform .15s;
+}
+.nearby-item:hover{border-color:var(--sun);transform:translateX(3px)}
+.nearby-item.active{border-color:var(--tomato);background:var(--tomato-pale)}
+.ni-photo{
+  width:48px;height:48px;border-radius:10px;overflow:hidden;flex-shrink:0;
+}
+.ni-photo img{width:100%;height:100%;object-fit:cover}
+.ni-info{flex:1;min-width:0}
+.ni-name{font-weight:700;font-size:.83rem;color:var(--brown);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ni-dish{font-size:.73rem;color:var(--muted);margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ni-right{text-align:right;flex-shrink:0}
+.ni-dist{font-size:.68rem;color:var(--muted)}
+.ni-price{font-family:'Lora',serif;font-size:.95rem;font-weight:700;color:var(--tomato)}
+.ni-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22C55E;margin-right:.3rem}
+
+/* map visual */
+.map-visual{
+  background:#EEF4EE;border-radius:24px;
+  border:2px solid var(--border);overflow:hidden;
+  position:relative;min-height:520px;
+  box-shadow:var(--card-shadow);
+}
+.map-svg{width:100%;height:100%;position:absolute;inset:0}
+.map-popup{
+  position:absolute;background:white;border-radius:14px;
+  padding:.85rem 1rem;box-shadow:0 8px 28px rgba(46,31,20,.14);
+  border:1.5px solid var(--border);min-width:190px;z-index:10;
+  animation:popIn .3s ease;pointer-events:none;
+}
+.pp-photo{width:100%;height:90px;border-radius:10px;overflow:hidden;margin-bottom:.6rem}
+.pp-photo img{width:100%;height:100%;object-fit:cover}
+.popup-name{font-weight:700;font-size:.82rem;color:var(--brown);margin-bottom:.15rem}
+.popup-dish{font-size:.73rem;color:var(--muted);margin-bottom:.5rem}
+.popup-foot{display:flex;align-items:center;justify-content:space-between}
+.popup-price{font-family:'Lora',serif;font-weight:700;color:var(--tomato);font-size:.92rem}
+.popup-avail{font-size:.66rem;color:#22C55E;font-weight:700}
+.popup-tail{position:absolute;bottom:-8px;left:20px;width:16px;height:8px;overflow:hidden}
+.popup-tail::before{
+  content:'';position:absolute;width:14px;height:14px;background:white;
+  border:1.5px solid var(--border);transform:rotate(45deg);top:-8px;left:1px;
+}
+.pin-marker{cursor:pointer;transition:transform .2s}
+.pin-marker:hover .pin-circle{filter:brightness(1.1)}
+
+/* ── CHEFS SECTION ── */
+.chefs-section{padding:6rem 3rem;background:var(--warm-white)}
+.chefs-inner{max-width:1320px;margin:0 auto}
+.chefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3rem}
+.chef-card{
+  background:white;border-radius:22px;overflow:hidden;
+  border:1.5px solid var(--border);
+  box-shadow:var(--card-shadow);
+  transition:transform .3s,box-shadow .3s;
+}
+.chef-card:hover{transform:translateY(-7px);box-shadow:0 24px 60px rgba(46,31,20,.14)}
+.cc-photo{height:200px;overflow:hidden;position:relative}
+.cc-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.chef-card:hover .cc-photo img{transform:scale(1.04)}
+.cc-flag{
+  position:absolute;top:10px;right:10px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  border-radius:100px;padding:.3rem .75rem;
+  font-size:.72rem;font-weight:700;color:var(--brown);
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  display:flex;align-items:center;gap:.35rem;
+}
+.cc-status{
+  position:absolute;top:10px;left:10px;
+  background:#22C55E;color:white;
+  border-radius:100px;padding:.22rem .6rem;
+  font-size:.64rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+}
+.cc-body{padding:1.3rem}
+.cc-name{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--brown);margin-bottom:.15rem}
+.cc-quote{font-family:'Caveat',cursive;font-size:.98rem;font-weight:500;color:var(--tomato);margin-bottom:.65rem}
+.cc-desc{font-size:.8rem;line-height:1.65;color:var(--muted);margin-bottom:.9rem}
+.cc-dishes{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.cc-dish{
+  background:var(--linen);color:var(--brown-mid);
+  font-size:.7rem;font-weight:600;padding:.28rem .65rem;border-radius:100px;
+}
+.cc-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:.85rem;border-top:1px solid var(--border);
+}
+.cc-rating{font-size:.8rem;font-weight:700;color:var(--brown)}
+.cc-rating .stars{color:#F59E0B}
+.cc-orders{font-size:.7rem;color:var(--muted);margin-top:.1rem}
+.cc-btn{
+  background:var(--sun-pale);color:var(--brown);
+  border:1.5px solid rgba(247,168,0,.3);
+  padding:.42rem .95rem;border-radius:100px;
+  font-size:.76rem;font-weight:700;cursor:pointer;
+  font-family:'Nunito',sans-serif;
+  transition:background .2s,border-color .2s;text-decoration:none;display:inline-block;
+}
+.cc-btn:hover{background:var(--sun);border-color:var(--sun)}
+
+/* ── CONTAINERS SECTION ── */
+.containers-section{
+  padding:6rem 3rem;
+  background:linear-gradient(160deg,var(--linen) 0%,var(--warm-white) 100%);
+}
+.containers-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+
+/* Photo collage of containers */
+.container-collage{
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1rem;position:relative;
+}
+.ct-img{border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow)}
+.ct-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ct-main{grid-column:1/3;height:220px}
+.ct-sub{height:170px}
+/* Quzyn logo watermark on containers */
+.ct-logo-badge{
+  position:absolute;top:10px;left:10px;
+  background:white;border-radius:12px;padding:.5rem .8rem;
+  display:flex;align-items:center;gap:.5rem;
+  box-shadow:0 4px 16px rgba(46,31,20,.12);
+  border:1.5px solid var(--border);
+}
+.ct-logo-badge img{height:32px;width:auto}
+.ct-logo-badge span{font-size:.72rem;font-weight:700;color:var(--brown);line-height:1.3}
+
+/* FREE kit callout */
+.free-kit-callout{
+  background:var(--tomato);color:white;
+  border-radius:20px;padding:1.5rem;margin-top:1rem;
+  display:flex;align-items:flex-start;gap:1rem;
+  box-shadow:0 8px 30px rgba(217,79,43,.25);
+}
+.fk-icon{font-size:2rem;line-height:1;flex-shrink:0}
+.fk-text h4{font-family:'Lora',serif;font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.fk-text p{font-size:.8rem;line-height:1.6;opacity:.9}
+
+.pack-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin:1.5rem 0 2rem}
+.pack-features li{
+  display:flex;align-items:flex-start;gap:.7rem;
+  font-size:.87rem;color:var(--brown-mid);line-height:1.5;
+}
+.pf-check{
+  width:20px;height:20px;background:var(--sage-pale);color:var(--sage);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:800;flex-shrink:0;margin-top:1px;
+}
+
+/* ── HOW IT WORKS ── */
+.hiw-section{padding:6rem 3rem;background:var(--cream)}
+.hiw-inner{max-width:1200px;margin:0 auto}
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.hiw-card{
+  background:white;border-radius:20px;padding:2rem 1.5rem;
+  border:1.5px solid var(--border);
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.hiw-card:hover{transform:translateY(-5px);box-shadow:var(--card-shadow);border-color:var(--sun)}
+.hiw-num{
+  font-family:'Lora',serif;font-size:4.5rem;font-weight:700;
+  color:rgba(46,31,20,.05);line-height:1;margin-bottom:.3rem;
+}
+.hiw-icon{font-size:2rem;margin-bottom:.8rem}
+.hiw-title{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:.45rem}
+.hiw-body{font-size:.8rem;line-height:1.7;color:var(--muted)}
+
+/* ── SIGNUP ── */
+.signup-section{
+  padding:7rem 3rem;
+  background:linear-gradient(160deg,var(--sun-pale) 0%,var(--warm-white) 100%);
+  text-align:center;position:relative;overflow:hidden;
+}
+.signup-deco{position:absolute;opacity:.06;pointer-events:none;line-height:1}
+.signup-inner{max-width:640px;margin:0 auto;position:relative;z-index:1}
+.signup-h2{
+  font-family:'Lora',serif;
+  font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;
+  line-height:1.1;letter-spacing:-0.02em;color:var(--brown);margin-bottom:1rem;
+}
+.signup-h2 em{font-style:italic;color:var(--tomato)}
+.signup-sub{font-size:.98rem;line-height:1.75;color:var(--brown-mid);margin-bottom:2.2rem}
+.tab-row{
+  display:inline-flex;gap:.4rem;
+  background:white;border:1.5px solid var(--border);
+  border-radius:100px;padding:.3rem;margin-bottom:1.4rem;
+}
+.stab{
+  padding:.48rem 1.2rem;border-radius:100px;border:none;
+  font-family:'Nunito',sans-serif;font-size:.83rem;font-weight:700;
+  cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;
+}
+.stab.active{background:var(--tomato);color:white}
+.stab:hover:not(.active){color:var(--brown)}
+.signup-form{
+  display:flex;gap:.4rem;
+  background:white;border:2px solid var(--border);
+  border-radius:100px;padding:.4rem;max-width:480px;margin:0 auto;
+  box-shadow:0 8px 30px rgba(46,31,20,.08);
+}
+.signup-form input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:var(--brown);font-family:'Nunito',sans-serif;font-size:.93rem;
+  padding:.55rem 1rem;
+}
+.signup-form input::placeholder{color:rgba(122,92,74,.45)}
+.signup-form button{
+  background:var(--tomato);color:white;border:none;
+  padding:.6rem 1.4rem;border-radius:100px;
+  font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;
+  cursor:pointer;transition:transform .15s,background .2s;white-space:nowrap;
+}
+.signup-form button:hover{background:#B8401F;transform:scale(1.03)}
+#signup-msg{margin-top:.8rem;font-size:.83rem;color:var(--sage);font-weight:600;min-height:1.1em}
+.signup-note{margin-top:.7rem;font-size:.73rem;color:var(--muted)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--brown);color:rgba(255,255,255,.6);
+  padding:2.5rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-logo{display:flex;align-items:center;gap:.6rem}
+.footer-logo img{height:38px;width:auto;filter:brightness(0) invert(1) opacity(.9)}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:white}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* ── ANIMATIONS ── */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes popIn{from{opacity:0;transform:scale(.92) translateY(5px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.anim{animation:fadeUp .7s ease both}
+.a1{animation-delay:.1s}.a2{animation-delay:.2s}.a3{animation-delay:.3s}.a4{animation-delay:.4s}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── MOBILE ── */
+@media(max-width:1024px){
+  .food-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:unset}
+  .ft-wide,.ft-tall{grid-column:unset;grid-row:unset}
+  .food-tile{height:200px}
+  .containers-inner{grid-template-columns:1fr;gap:3rem}
+  .map-layout{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  nav{padding:.8rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}
+  .chefs-grid{grid-template-columns:1fr 1fr}
+  .hiw-grid{grid-template-columns:1fr 1fr}
+  .food-section,.map-section,.chefs-section,.containers-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .footer-links{justify-content:center}
+}
+@media(max-width:600px){
+  .chefs-grid{grid-template-columns:1fr}
+  .hiw-grid{grid-template-columns:1fr}
+  .container-collage{grid-template-columns:1fr}
+  .ct-main,.ct-sub{grid-column:unset}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <img src="/mnt/user-data/uploads/1783174639250_image.png" alt="Quzyn">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#food">Browse food</a></li>
+    <li><a href="#chefs">Meet cooks</a></li>
+    <li><a href="#containers">Free kit</a></li>
+    <li><a href="#join" class="nav-cta">Join free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section style="background:var(--warm-white);overflow:hidden">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag anim">Home cooking, rediscovered</div>
+    <h1 class="anim a1">
+      Your neighbor<br>
+      is an <em>incredible</em><br>
+      <span class="hl">cook.</span>
+    </h1>
+    <p class="hero-sub anim a2">
+      Quzyn puts real home chefs on the map — Texas BBQ, Italian ragù, Nigerian jollof, Chinese dumplings, Thai curry, Vietnamese pho, and more. Order fresh, authentic, home-cooked meals from neighbors who genuinely love to cook. Or turn your own kitchen into income.
+    </p>
+    <div class="hero-actions anim a3">
+      <a href="#food" class="btn-red">🗺️ Find food near me</a>
+      <a href="#join" class="btn-outline">👩‍🍳 Start cooking for income</a>
+    </div>
+    <div class="hero-trust anim a4">
+      <div class="avatars">
+        <div class="av"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt=""></div>
+        <div class="av"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&q=80" alt=""></div>
+        <div class="av"><img src="https://images.unsplash.com/photo-1546961342-ea5f62d5a27b?w=80&q=80" alt=""></div>
+        <div class="av"><img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=80&q=80" alt=""></div>
+      </div>
+      <div class="trust-text"><strong>Pilot chefs cooking now</strong> — join your neighborhood</div>
+    </div>
+  </div>
+
+  <div class="hero-right anim a2" style="position:relative">
+    <div class="container-float">
+      <div class="cf-img"><img src="/mnt/user-data/uploads/1783174385032_image.png" alt="Quzyn container"></div>
+      <div class="cf-text">
+        <strong>Free container kit</strong>
+        For every new chef who signs up
+      </div>
+    </div>
+    <div class="hero-collage">
+      <div class="hc-main">
+        <div class="live-badge"><span class="live-dot"></span> 12 chefs cooking now</div>
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=900&q=85" alt="Home cooked food spread">
+        <div class="dish-label">
+          <span class="flag">🇮🇹 Italian</span>
+          <span class="name">Fresh Pasta Ragù</span>
+          <span class="chef">Maria C. · 0.7 mi · $17</span>
+        </div>
+      </div>
+      <div class="hc-sub">
+        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&q=85" alt="Indian curry">
+        <div class="dish-label">
+          <span class="flag">🇮🇳 Indian</span>
+          <span class="name">Lamb Rogan Josh</span>
+          <span class="chef">Priya M. · 0.8 mi · $16</span>
+        </div>
+      </div>
+      <div class="hc-sub">
+        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=500&q=85" alt="Smoked BBQ brisket">
+        <div class="dish-label">
+          <span class="flag">🇺🇸 Texas BBQ</span>
+          <span class="name">Smoked Brisket</span>
+          <span class="chef">Travis W. · 0.9 mi · $19</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-inner">
+    <span class="marquee-item">🇺🇸 Texas Smoked Brisket <span class="msep">✦</span></span>
+    <span class="marquee-item">🇮🇹 Fresh Pasta Ragù <span class="msep">✦</span></span>
+    <span class="marquee-item">🇳🇬 Party Jollof Rice <span class="msep">✦</span></span>
+    <span class="marquee-item">🇨🇳 Pork Dumplings <span class="msep">✦</span></span>
+    <span class="marquee-item">🇹🇭 Green Curry <span class="msep">✦</span></span>
+    <span class="marquee-item">🇻🇳 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
+    <span class="marquee-item">🇺🇸 Honey Fried Chicken <span class="msep">✦</span></span>
+    <span class="marquee-item">🇮🇳 Lamb Biryani <span class="msep">✦</span></span>
+    <span class="marquee-item">🇲🇽 Birria Tacos <span class="msep">✦</span></span>
+    <span class="marquee-item">🇱🇧 Mezze Platter <span class="msep">✦</span></span>
+    <span class="marquee-item">🇯🇵 Tonkotsu Ramen <span class="msep">✦</span></span>
+    <span class="marquee-item">🇪🇹 Doro Wat <span class="msep">✦</span></span>
+    <span class="marquee-item">🇰🇷 Galbi & Kimchi <span class="msep">✦</span></span>
+    <span class="marquee-item">🇵🇪 Ceviche Clásico <span class="msep">✦</span></span>
+    <span class="marquee-item">🇬🇷 Lamb Kleftiko <span class="msep">✦</span></span>
+    <span class="marquee-item">🇲🇦 Chicken Tagine <span class="msep">✦</span></span>
+    <!-- duplicate -->
+    <span class="marquee-item">🇺🇸 Texas Smoked Brisket <span class="msep">✦</span></span>
+    <span class="marquee-item">🇮🇹 Fresh Pasta Ragù <span class="msep">✦</span></span>
+    <span class="marquee-item">🇳🇬 Party Jollof Rice <span class="msep">✦</span></span>
+    <span class="marquee-item">🇨🇳 Pork Dumplings <span class="msep">✦</span></span>
+    <span class="marquee-item">🇹🇭 Green Curry <span class="msep">✦</span></span>
+    <span class="marquee-item">🇻🇳 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
+    <span class="marquee-item">🇺🇸 Honey Fried Chicken <span class="msep">✦</span></span>
+    <span class="marquee-item">🇮🇳 Lamb Biryani <span class="msep">✦</span></span>
+    <span class="marquee-item">🇲🇽 Birria Tacos <span class="msep">✦</span></span>
+    <span class="marquee-item">🇱🇧 Mezze Platter <span class="msep">✦</span></span>
+    <span class="marquee-item">🇯🇵 Tonkotsu Ramen <span class="msep">✦</span></span>
+    <span class="marquee-item">🇪🇹 Doro Wat <span class="msep">✦</span></span>
+    <span class="marquee-item">🇰🇷 Galbi & Kimchi <span class="msep">✦</span></span>
+    <span class="marquee-item">🇵🇪 Ceviche Clásico <span class="msep">✦</span></span>
+    <span class="marquee-item">🇬🇷 Lamb Kleftiko <span class="msep">✦</span></span>
+    <span class="marquee-item">🇲🇦 Chicken Tagine <span class="msep">✦</span></span>
+  </div>
+</div>
+
+<!-- FOOD PHOTO GRID -->
+<section id="food" class="food-section">
+  <div class="food-inner">
+    <div class="reveal">
+      <div class="sec-tag">A world of flavor, one mile away</div>
+      <h2 class="sec-h2">Every craving. <em>Every culture.</em></h2>
+      <p class="sec-sub">Real dishes made by real neighbors. Click any chef on the map to order — pickup, delivery, or scheduled ahead.</p>
+    </div>
+    <div class="food-grid reveal">
+
+      <div class="food-tile ft-wide">
+        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&q=85" alt="Nigerian Jollof Rice">
+        <div class="dish-label">
+          <span class="flag">🇳🇬 Nigerian</span>
+          <span class="name">Party Jollof Rice & Fried Plantain</span>
+          <span class="chef">Adaeze O. · 0.5 mi · from $13</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=85" alt="Indian Curry">
+        <div class="dish-label">
+          <span class="flag">🇮🇳 Indian</span>
+          <span class="name">Lamb Rogan Josh</span>
+          <span class="chef">Priya M. · 0.8 mi · $16</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=85" alt="Italian pasta">
+        <div class="dish-label">
+          <span class="flag">🇮🇹 Italian</span>
+          <span class="name">Fresh Tagliatelle Ragù</span>
+          <span class="chef">Maria C. · 0.7 mi · $17</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=85" alt="Chinese dumplings">
+        <div class="dish-label">
+          <span class="flag">🇨🇳 Chinese</span>
+          <span class="name">Pork Dumplings & Dan Dan Noodles</span>
+          <span class="chef">Wei-Lin C. · 1.0 mi · $14</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&q=85" alt="Thai curry">
+        <div class="dish-label">
+          <span class="flag">🇹🇭 Thai</span>
+          <span class="name">Green Curry & Mango Sticky Rice</span>
+          <span class="chef">Mali S. · 1.3 mi · $14</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=500&q=85" alt="BBQ brisket">
+        <div class="dish-label">
+          <span class="flag">🇺🇸 Texas BBQ</span>
+          <span class="name">Slow-Smoked Brisket</span>
+          <span class="chef">Travis W. · 0.9 mi · $19</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=500&q=85" alt="Vietnamese Pho">
+        <div class="dish-label">
+          <span class="flag">🇻🇳 Vietnamese</span>
+          <span class="name">Pho Bo — 10-Hour Broth</span>
+          <span class="chef">Linh N. · 1.6 mi · $13</span>
+        </div>
+      </div>
+
+      <div class="food-tile">
+        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&q=85" alt="Fried chicken">
+        <div class="dish-label">
+          <span class="flag">🇺🇸 Southern</span>
+          <span class="name">Honey Fried Chicken & Mac</span>
+          <span class="chef">Debra M. · 1.4 mi · $15</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map" class="map-section">
+  <div class="map-inner">
+    <div class="reveal">
+      <div class="sec-tag">Live in your neighborhood</div>
+      <h2 class="sec-h2">Home chefs on the <em>map,</em> cooking right now</h2>
+    </div>
+    <div class="map-layout reveal">
+      <div>
+        <p style="font-size:.9rem;line-height:1.75;color:var(--brown-mid);margin-bottom:1.2rem">Unlike delivery apps that hide who made your food, Quzyn puts real home chefs on a live map. See who's cooking, what they're making, and how far away they are — right now.</p>
+        <div class="nearby-list">
+          <div class="nearby-item active" onclick="showPopup(this,0)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=100&q=80" alt="BBQ"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Travis W. · 🇺🇸 Texas BBQ</div>
+              <div class="ni-dish">Slow-smoked brisket & jalapeño cornbread</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">0.9 mi</div><div class="ni-price">$19</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,1)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=100&q=80" alt="Italian"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Maria C. · 🇮🇹 Italian</div>
+              <div class="ni-dish">Fresh tagliatelle with slow ragù</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">0.7 mi</div><div class="ni-price">$17</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,2)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=100&q=80" alt="Nigerian"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Adaeze O. · 🇳🇬 Nigerian</div>
+              <div class="ni-dish">Party jollof rice & fried plantain</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">0.5 mi</div><div class="ni-price">$13</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,3)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=100&q=80" alt="Chinese"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Wei-Lin C. · 🇨🇳 Chinese</div>
+              <div class="ni-dish">Pork dumplings & dan dan noodles</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">1.0 mi</div><div class="ni-price">$14</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,4)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=100&q=80" alt="Thai"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Mali S. · 🇹🇭 Thai</div>
+              <div class="ni-dish">Green curry & mango sticky rice</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">1.3 mi</div><div class="ni-price">$14</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,5)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=100&q=80" alt="Vietnamese"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Linh N. · 🇻🇳 Vietnamese</div>
+              <div class="ni-dish">Pho bo 10-hr broth & bánh mì</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">1.6 mi</div><div class="ni-price">$13</div></div>
+          </div>
+          <div class="nearby-item" onclick="showPopup(this,6)">
+            <div class="ni-photo"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=100&q=80" alt="Southern"></div>
+            <div class="ni-info">
+              <div class="ni-name"><span class="ni-dot"></span>Debra M. · 🇺🇸 Southern</div>
+              <div class="ni-dish">Honey fried chicken & four-cheese mac</div>
+            </div>
+            <div class="ni-right"><div class="ni-dist">1.4 mi</div><div class="ni-price">$15</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-visual" id="map-visual">
+        <svg class="map-svg" viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg">
+          <rect width="620" height="520" fill="#EEF4EE"/>
+          <!-- Streets horizontal -->
+          <rect x="0" y="95" width="620" height="20" fill="#E0EBE0"/>
+          <rect x="0" y="195" width="620" height="14" fill="#E5EDDE"/>
+          <rect x="0" y="290" width="620" height="20" fill="#E0EBE0"/>
+          <rect x="0" y="400" width="620" height="13" fill="#E5EDDE"/>
+          <rect x="0" y="460" width="620" height="16" fill="#E0EBE0"/>
+          <!-- Streets vertical -->
+          <rect x="85"  y="0" width="14" height="520" fill="#E5EDDE"/>
+          <rect x="195" y="0" width="20" height="520" fill="#E0EBE0"/>
+          <rect x="340" y="0" width="14" height="520" fill="#E5EDDE"/>
+          <rect x="455" y="0" width="18" height="520" fill="#E0EBE0"/>
+          <!-- Blocks -->
+          <rect x="15"  y="118" width="64" height="70" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="103" y="118" width="84" height="70" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="220" y="118" width="112" height="70" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="358" y="118" width="90" height="70" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="476" y="118" width="130" height="70" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="15"  y="212" width="64" height="70" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="103" y="212" width="84" height="70" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="220" y="212" width="112" height="70" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="358" y="212" width="90" height="70" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="15"  y="312" width="64" height="80" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="103" y="312" width="84" height="80" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="220" y="312" width="112" height="80" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <rect x="358" y="312" width="90" height="80" rx="6" fill="#C8DFC4" opacity=".7"/>
+          <rect x="476" y="312" width="130" height="80" rx="6" fill="#D4E8D0" opacity=".7"/>
+          <!-- Park -->
+          <rect x="15" y="418" width="160" height="34" rx="8" fill="#B8D8A8" opacity=".8"/>
+          <rect x="220" y="418" width="112" height="34" rx="8" fill="#B8D8A8" opacity=".8"/>
+          <!-- Street labels -->
+          <text x="210" y="87"  font-family="sans-serif" font-size="9" fill="#7A9A7A" text-anchor="middle">Main Ave</text>
+          <text x="350" y="87"  font-family="sans-serif" font-size="9" fill="#7A9A7A" text-anchor="middle">Elm St</text>
+          <text x="80"  y="87"  font-family="sans-serif" font-size="9" fill="#7A9A7A" text-anchor="middle">Oak Ln</text>
+          <!-- You -->
+          <circle cx="310" cy="260" r="28" fill="rgba(62,150,210,.08)"/>
+          <circle cx="310" cy="260" r="17" fill="rgba(62,150,210,.13)"/>
+          <circle cx="310" cy="260" r="8"  fill="#3B96D2"/>
+          <circle cx="310" cy="260" r="4"  fill="white"/>
+          <text x="310" y="248" font-family="sans-serif" font-size="9" fill="#3B96D2" text-anchor="middle" font-weight="600">You</text>
+          <!-- radius ring -->
+          <circle cx="310" cy="260" r="115" fill="none" stroke="#F7A800" stroke-width="1.5" stroke-dasharray="6 4" opacity=".35"/>
+          <text x="440" y="152" font-family="sans-serif" font-size="9" fill="#F7A800" font-weight="600">2 mi radius</text>
+          <!-- PINS -->
+          <!-- 0: Travis BBQ -->
+          <g class="pin-marker" onclick="pinClick(0)">
+            <circle class="pin-circle" cx="160" cy="200" r="16" fill="#D94F2B" opacity=".18"/>
+            <circle class="pin-circle" cx="160" cy="200" r="11" fill="#D94F2B"/>
+            <text x="160" y="204" text-anchor="middle" font-size="9" fill="white" font-weight="700">🥩</text>
+            <polygon points="160,213 155,220 165,220" fill="#D94F2B"/>
+            <text x="160" y="232" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Travis</text>
+          </g>
+          <!-- 1: Maria Italian -->
+          <g class="pin-marker" onclick="pinClick(1)">
+            <circle class="pin-circle" cx="400" cy="148" r="16" fill="#C03030" opacity=".18"/>
+            <circle class="pin-circle" cx="400" cy="148" r="11" fill="#C03030"/>
+            <text x="400" y="152" text-anchor="middle" font-size="9" fill="white" font-weight="700">🍝</text>
+            <polygon points="400,161 395,168 405,168" fill="#C03030"/>
+            <text x="400" y="180" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Maria</text>
+          </g>
+          <!-- 2: Adaeze Nigerian -->
+          <g class="pin-marker" onclick="pinClick(2)">
+            <circle class="pin-circle" cx="240" cy="345" r="16" fill="#D94F2B" opacity=".18"/>
+            <circle class="pin-circle" cx="240" cy="345" r="11" fill="#D94F2B"/>
+            <text x="240" y="349" text-anchor="middle" font-size="9" fill="white" font-weight="700">🍲</text>
+            <polygon points="240,358 235,365 245,365" fill="#D94F2B"/>
+            <text x="240" y="377" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Adaeze</text>
+          </g>
+          <!-- 3: Wei-Lin Chinese -->
+          <g class="pin-marker" onclick="pinClick(3)">
+            <circle class="pin-circle" cx="480" cy="310" r="16" fill="#A03020" opacity=".18"/>
+            <circle class="pin-circle" cx="480" cy="310" r="11" fill="#A03020"/>
+            <text x="480" y="314" text-anchor="middle" font-size="9" fill="white" font-weight="700">🥟</text>
+            <polygon points="480,323 475,330 485,330" fill="#A03020"/>
+            <text x="480" y="342" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Wei-Lin</text>
+          </g>
+          <!-- 4: Mali Thai -->
+          <g class="pin-marker" onclick="pinClick(4)">
+            <circle class="pin-circle" cx="103" cy="350" r="16" fill="#3A7A20" opacity=".18"/>
+            <circle class="pin-circle" cx="103" cy="350" r="11" fill="#3A7A20"/>
+            <text x="103" y="354" text-anchor="middle" font-size="9" fill="white" font-weight="700">🍜</text>
+            <polygon points="103,363 98,370 108,370" fill="#3A7A20"/>
+            <text x="103" y="382" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Mali</text>
+          </g>
+          <!-- 5: Linh Vietnamese -->
+          <g class="pin-marker" onclick="pinClick(5)">
+            <circle class="pin-circle" cx="370" cy="430" r="16" fill="#C03060" opacity=".18"/>
+            <circle class="pin-circle" cx="370" cy="430" r="11" fill="#C03060"/>
+            <text x="370" y="434" text-anchor="middle" font-size="9" fill="white" font-weight="700">🍲</text>
+            <polygon points="370,443 365,450 375,450" fill="#C03060"/>
+            <text x="370" y="462" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Linh</text>
+          </g>
+          <!-- 6: Debra Southern -->
+          <g class="pin-marker" onclick="pinClick(6)">
+            <circle class="pin-circle" cx="530" cy="415" r="16" fill="#B06010" opacity=".18"/>
+            <circle class="pin-circle" cx="530" cy="415" r="11" fill="#B06010"/>
+            <text x="530" y="419" text-anchor="middle" font-size="9" fill="white" font-weight="700">🍗</text>
+            <polygon points="530,428 525,435 535,435" fill="#B06010"/>
+            <text x="530" y="447" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#2E1F14" font-weight="700">Debra</text>
+          </g>
+        </svg>
+        <!-- Popup -->
+        <div class="map-popup" id="map-popup" style="top:45px;left:25px;max-width:210px">
+          <div class="pp-photo"><img id="pp-img" src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&q=80" alt="dish"></div>
+          <div class="popup-name" id="pp-name">Travis W. 🇺🇸</div>
+          <div class="popup-dish" id="pp-dish">Slow-smoked brisket & jalapeño cornbread</div>
+          <div class="popup-foot">
+            <span class="popup-price" id="pp-price">$19</span>
+            <span class="popup-avail">● Ready in 30 min</span>
+          </div>
+          <div class="popup-tail"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEFS -->
+<section id="chefs" class="chefs-section">
+  <div class="chefs-inner">
+    <div class="reveal">
+      <div class="sec-tag">Meet your neighbors</div>
+      <h2 class="sec-h2">Real people. <em>Real kitchens.</em> Extraordinary food.</h2>
+    </div>
+    <div class="chefs-grid">
+
+      <div class="chef-card reveal">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&q=85" alt="BBQ brisket">
+          <div class="cc-flag">🇺🇸 Texas BBQ</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Travis Williams</div>
+          <div class="cc-quote">"Low and slow is the only way."</div>
+          <p class="cc-desc">Travis has been smoking meats in his backyard since he was twelve. His brisket goes in at 4 a.m. with a salt-and-pepper rub and comes out 14 hours later with a perfect bark. Jalapeño cheddar cornbread baked fresh every batch.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Smoked Brisket</span><span class="cc-dish">Baby Back Ribs</span>
+            <span class="cc-dish">Jalapeño Cornbread</span><span class="cc-dish">Peach Cobbler</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">118 orders · 0.9 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.08s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=85" alt="Italian pasta">
+          <div class="cc-flag">🇮🇹 Italian</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Maria Conti</div>
+          <div class="cc-quote">"Nonna's recipes, your doorstep."</div>
+          <p class="cc-desc">Maria makes fresh pasta by hand every morning — no machines, no shortcuts. Her ragù simmers for four hours. Raised in Naples, she moved to Texas in 1998 and has cooked Sunday dinners for the whole block ever since.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Fresh Tagliatelle Ragù</span><span class="cc-dish">Eggplant Parmigiana</span>
+            <span class="cc-dish">Tiramisu</span><span class="cc-dish">Arancini</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 5.0</div><div class="cc-orders">203 orders · 0.7 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.16s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=85" alt="Nigerian jollof">
+          <div class="cc-flag">🇳🇬 Nigerian</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Adaeze Okonkwo</div>
+          <div class="cc-quote">"My food tells the story of Lagos."</div>
+          <p class="cc-desc">Adaeze has been cooking Nigerian food for 28 years. Her party jollof rice uses a secret tomato base from her mother in Lagos, cooked over firewood-style high heat for that signature smokiness.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Party Jollof Rice</span><span class="cc-dish">Egusi Soup</span>
+            <span class="cc-dish">Fried Plantain</span><span class="cc-dish">Suya Skewers</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">142 orders · 0.5 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.08s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=85" alt="Chinese dumplings">
+          <div class="cc-flag">🇨🇳 Chinese</div>
+          <div class="cc-status">Orders open</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Wei-Lin Chen</div>
+          <div class="cc-quote">"Every fold in the dumpling tells a story."</div>
+          <p class="cc-desc">Wei-Lin grew up in Chengdu and brings authentic Sichuan cooking here. She folds dumplings by hand, makes her own chili oil, and braises pork belly in soy, star anise, and Shaoxing wine.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Pork Dumplings</span><span class="cc-dish">Mapo Tofu</span>
+            <span class="cc-dish">Red-braised Pork Belly</span><span class="cc-dish">Dan Dan Noodles</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">177 orders · 1.0 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.16s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&q=85" alt="Thai curry">
+          <div class="cc-flag">🇹🇭 Thai</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Mali Srisook</div>
+          <div class="cc-quote">"Thai food must be hot, sour, sweet, salty — all at once."</div>
+          <p class="cc-desc">Mali moved from Chiang Mai to Texas six years ago. She makes her green curry paste from scratch with galangal, lemongrass, and kaffir lime, and sources fresh Thai basil from her garden every morning.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Green Curry</span><span class="cc-dish">Pad Thai</span>
+            <span class="cc-dish">Tom Kha Soup</span><span class="cc-dish">Mango Sticky Rice</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 5.0</div><div class="cc-orders">91 orders · 1.3 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.24s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=85" alt="Vietnamese pho">
+          <div class="cc-flag">🇻🇳 Vietnamese</div>
+          <div class="cc-status">Orders open</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Linh Nguyen</div>
+          <div class="cc-quote">"My broth simmers 10 hours. Yours takes 10 minutes to enjoy."</div>
+          <p class="cc-desc">Linh makes pho the Hanoi way — beef bones roasted and simmered overnight with charred onion, ginger, star anise, and cinnamon. Her bánh mì uses housemade pickled daikon and a fresh-baked baguette.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Pho Bo</span><span class="cc-dish">Bánh Mì</span>
+            <span class="cc-dish">Bún Bò Huế</span><span class="cc-dish">Chè Ba Màu</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">134 orders · 1.6 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.08s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=85" alt="Indian curry">
+          <div class="cc-flag">🇮🇳 Indian</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Priya Mehta</div>
+          <div class="cc-quote">"Every spice has a memory."</div>
+          <p class="cc-desc">Priya grew up in Chennai cooking with her grandmother. Her curries start with whole spices toasted in ghee — she grinds her masalas fresh each morning and grows curry leaves on her patio.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Lamb Rogan Josh</span><span class="cc-dish">Chicken Biryani</span>
+            <span class="cc-dish">Dal Tadka</span><span class="cc-dish">Gulab Jamun</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 5.0</div><div class="cc-orders">89 orders · 0.8 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.16s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=85" alt="Southern fried chicken">
+          <div class="cc-flag">🇺🇸 Southern</div>
+          <div class="cc-status">Cooking now</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Debra Monroe</div>
+          <div class="cc-quote">"Comfort food with love in every bite."</div>
+          <p class="cc-desc">Debra learned to cook from her grandmother in Mississippi and brought those recipes to Texas. Her chicken is brined overnight in buttermilk and honey, then fried to order. Four-cheese mac baked fresh daily.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Honey Fried Chicken</span><span class="cc-dish">Four-Cheese Mac</span>
+            <span class="cc-dish">Collard Greens</span><span class="cc-dish">Sweet Potato Pie</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">156 orders · 1.4 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="chef-card reveal" style="transition-delay:.24s">
+        <div class="cc-photo">
+          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=85" alt="Lebanese mezze">
+          <div class="cc-flag">🇱🇧 Lebanese</div>
+          <div class="cc-status">Orders open</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-name">Nour Haddad</div>
+          <div class="cc-quote">"Food is how we say welcome."</div>
+          <p class="cc-desc">Nour came to Texas from Beirut in 2009. Her mezze platters are made fresh morning-of — hummus from dried chickpeas, hand-rolled falafel, tabbouleh with mint from her garden. Every order is like being invited to her table.</p>
+          <div class="cc-dishes">
+            <span class="cc-dish">Mezze Platter</span><span class="cc-dish">Kibbeh</span>
+            <span class="cc-dish">Shawarma</span><span class="cc-dish">Baklava</span>
+          </div>
+          <div class="cc-foot">
+            <div><div class="cc-rating"><span class="stars">★★★★★</span> 4.9</div><div class="cc-orders">67 orders · 1.2 mi</div></div>
+            <a href="#join" class="cc-btn">Order now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTAINERS -->
+<section id="containers" class="containers-section reveal">
+  <div class="containers-inner">
+    <div style="position:relative">
+      <div class="container-collage">
+        <div class="ct-img ct-main">
+          <img src="/mnt/user-data/uploads/1783174481054_image.png" alt="Eco kraft Quzyn container with salad">
+        </div>
+        <div class="ct-img ct-sub">
+          <img src="/mnt/user-data/uploads/1783174385032_image.png" alt="White takeout boxes with food">
+        </div>
+        <div class="ct-img ct-sub">
+          <img src="/mnt/user-data/uploads/1783174602620_image.png" alt="Soup cup with chicken noodle">
+        </div>
+        <div class="ct-logo-badge">
+          <img src="/mnt/user-data/uploads/1783174639250_image.png" alt="Quzyn logo">
+          <span>Your brand,<br>on every order</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-tag">Branded packaging</div>
+      <h2 class="sec-h2">Every meal arrives in a <em>Quzyn container</em></h2>
+      <p style="font-size:.95rem;line-height:1.8;color:var(--brown-mid);margin-bottom:1.2rem">
+        We supply home chefs with professional, eco-friendly Quzyn-branded containers — takeout boxes, kraft eco-boxes, and soup cups — so every order looks as good as it tastes. Sealed, labeled, and ready to impress.
+      </p>
+      <ul class="pack-features">
+        <li><div class="pf-check">✓</div>Three container types: takeout box, kraft eco-box, and soup cup</li>
+        <li><div class="pf-check">✓</div>Tamper-evident sealed lids for food safety and freshness</li>
+        <li><div class="pf-check">✓</div>Chef name, cuisine, and dish labeled on each container</li>
+        <li><div class="pf-check">✓</div>QR code on every container links to your Quzyn chef profile</li>
+        <li><div class="pf-check">✓</div>Eco-friendly, microwaveable, and fully recyclable</li>
+      </ul>
+
+      <div class="free-kit-callout">
+        <div class="fk-icon">🎁</div>
+        <div class="fk-text">
+          <h4>Free starter kit for every new chef</h4>
+          <p>Sign up as a home cook and we'll ship you a free Quzyn container starter kit — 25 takeout boxes, 10 soup cups, and 10 kraft eco-boxes, all branded and ready to go. No credit card needed.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem">
+        <a href="#join" class="btn-red">Claim your free kit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section reveal">
+  <div class="hiw-inner">
+    <div class="sec-tag">Simple from day one</div>
+    <h2 class="sec-h2">How Quzyn <em>works</em></h2>
+    <div class="hiw-grid">
+      <div class="hiw-card">
+        <div class="hiw-num">1</div>
+        <div class="hiw-icon">📍</div>
+        <div class="hiw-title">Open the map</div>
+        <p class="hiw-body">See home chefs cooking near you right now — filtered by cuisine, distance, dietary needs, or pickup time. Everyone on the map is a real neighbor.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">2</div>
+        <div class="hiw-icon">🍽️</div>
+        <div class="hiw-title">Choose your meal</div>
+        <p class="hiw-body">Browse real dishes with photos, descriptions, and chef backstories. Choose pickup, delivery, or schedule ahead. Message the chef with special requests.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">3</div>
+        <div class="hiw-icon">💳</div>
+        <div class="hiw-title">Pay securely</div>
+        <p class="hiw-body">Checkout in seconds. Your order arrives in a sealed, Quzyn-branded container. Get a notification when it's ready or on the way.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">4</div>
+        <div class="hiw-icon">🤝</div>
+        <div class="hiw-title">Build community</div>
+        <p class="hiw-body">Rate your chef. Follow your favorites. Every order puts money directly in a neighbor's pocket and helps them grow their home kitchen business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="signup-section" id="join">
+  <div class="signup-inner">
+    <div class="sec-tag" style="display:block;text-align:center;margin-bottom:.4rem">Limited pilot · Spots filling fast</div>
+    <h2 class="signup-h2">Ready to cook —<br>or <em>eat something real?</em></h2>
+    <p class="signup-sub">Join as a home cook (and get your free container kit), or as a food lover ready to discover the best food on your block.</p>
+    <div class="tab-row">
+      <button class="stab active" onclick="setTab(this)">🍴 I want to eat</button>
+      <button class="stab" onclick="setTab(this)">👩‍🍳 I cook at home</button>
+      <button class="stab" onclick="setTab(this)">🏪 Restaurant owner</button>
+    </div>
+    <div class="signup-form">
+      <input type="email" id="email" placeholder="Your email address" autocomplete="email">
+      <button onclick="doSignup()">Join waitlist</button>
+    </div>
+    <div id="signup-msg"></div>
+    <p class="signup-note">No spam. No credit card. We'll only email you about your local launch.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="/mnt/user-data/uploads/1783174639250_image.png" alt="Quzyn">
+  </div>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">For home chefs</a>
+    <a href="#containers">Free container kit</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="mailto:hello@quzyn.com">hello@quzyn.com</a>
+  </div>
+  <div class="footer-copy">© 2025 Quzyn · A Spheronomics company · Lewisville, TX</div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+}),{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// Nav shadow
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.boxShadow=
+    window.scrollY>40?'0 2px 20px rgba(46,31,20,.08)':'none';
+});
+
+// Map popup data (with photo URLs)
+const chefs=[
+  {name:'Travis W. 🇺🇸',dish:'Slow-smoked brisket & jalapeño cornbread',price:'$19',img:'https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&q=80',pos:{top:'100px',left:'20px'}},
+  {name:'Maria C. 🇮🇹',dish:'Fresh tagliatelle with slow ragù',price:'$17',img:'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80',pos:{top:'50px',left:'255px'}},
+  {name:'Adaeze O. 🇳🇬',dish:'Party jollof rice & fried plantain',price:'$13',img:'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80',pos:{top:'255px',left:'90px'}},
+  {name:'Wei-Lin C. 🇨🇳',dish:'Pork dumplings & dan dan noodles',price:'$14',img:'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80',pos:{top:'240px',left:'295px'}},
+  {name:'Mali S. 🇹🇭',dish:'Green curry & mango sticky rice',price:'$14',img:'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&q=80',pos:{top:'280px',left:'20px'}},
+  {name:'Linh N. 🇻🇳',dish:'Pho bo 10-hr broth & bánh mì',price:'$13',img:'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=80',pos:{top:'355px',left:'215px'}},
+  {name:'Debra M. 🇺🇸',dish:'Honey fried chicken & four-cheese mac',price:'$15',img:'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&q=80',pos:{top:'340px',left:'330px'}},
+];
+
+function showPopup(el,idx){
+  document.querySelectorAll('.nearby-item').forEach(n=>n.classList.remove('active'));
+  el.classList.add('active');
+  const p=document.getElementById('map-popup');
+  const d=chefs[idx];
+  document.getElementById('pp-name').textContent=d.name;
+  document.getElementById('pp-dish').textContent=d.dish;
+  document.getElementById('pp-price').textContent=d.price;
+  document.getElementById('pp-img').src=d.img;
+  p.style.top=d.pos.top;p.style.left=d.pos.left;
+  p.style.animation='none';
+  requestAnimationFrame(()=>{p.style.animation='popIn .3s ease'});
+}
+function pinClick(idx){
+  document.querySelectorAll('.nearby-item')[idx]?.click();
+}
+
+// Signup tabs
+function setTab(btn){
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('signup-msg').textContent='';
+}
+function doSignup(){
+  const v=document.getElementById('email').value.trim();
+  const m=document.getElementById('signup-msg');
+  const activeTab=document.querySelector('.stab.active').textContent;
+  if(!v||!v.includes('@')){m.style.color='var(--tomato)';m.textContent='Please enter a valid email.';return}
+  const isCook=activeTab.includes('cook');
+  m.style.color='var(--sage)';
+  m.textContent=isCook
+    ? "✓ You're on the list! We'll reach out about your free container kit when we launch near you."
+    : "✓ You're on the list! We'll reach out when Quzyn opens near you.";
+  document.getElementById('email').value='';
+  const btn=document.querySelector('.signup-form button');
+  btn.textContent="You're in! ✓";btn.style.background='var(--sage)';
+}
+</script>
+</body>
+</html>
