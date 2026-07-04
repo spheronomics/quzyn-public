@@ -1,0 +1,99 @@
+/* ============================================================
+   QUZYN DESIGN TOKENS
+   Single source of truth for all brand colors, typography,
+   spacing, and shadows. Import this first in every stylesheet.
+   ============================================================ */
+
+:root {
+  /* ── COLORS ── */
+  --tomato:        #D94F2B;
+  --tomato-pale:   #FDEEE9;
+  --tomato-dark:   #B8401F;
+
+  --sun:           #F7A800;
+  --sun-pale:      #FEF3D0;
+  --sun-light:     #FDF0C0;
+
+  --sage:          #4A7C59;
+  --sage-pale:     #EAF2ED;
+  --sage-dark:     #3A6048;
+
+  --cream:         #FFFDF7;
+  --warm-white:    #FFF9EE;
+  --linen:         #F5EDD8;
+
+  --brown:         #2E1F14;
+  --brown-mid:     #7A5C4A;
+  --brown-light:   #C4A882;
+  --muted:         #9E8878;
+  --border:        #EDE0CC;
+
+  /* Tier colors */
+  --bronze:        #CD7F32;
+  --silver:        #9B9B9B;
+  --gold:          #D4A017;
+  --elite:         #2C3E7A;
+
+  /* Semantic */
+  --success:       #22C55E;
+  --warning:       #F59E0B;
+  --error:         var(--tomato);
+  --info:          #3B96D2;
+
+  /* ── TYPOGRAPHY ── */
+  --font-display:  'Lora', Georgia, serif;
+  --font-body:     'Nunito', system-ui, sans-serif;
+  --font-accent:   'Caveat', cursive;
+
+  /* ── SPACING ── */
+  --space-xs:      0.25rem;
+  --space-sm:      0.5rem;
+  --space-md:      1rem;
+  --space-lg:      1.5rem;
+  --space-xl:      2.5rem;
+  --space-2xl:     4rem;
+  --space-3xl:     6rem;
+
+  /* ── BORDERS ── */
+  --radius-sm:     8px;
+  --radius-md:     14px;
+  --radius-lg:     20px;
+  --radius-xl:     28px;
+  --radius-pill:   100px;
+
+  /* ── SHADOWS ── */
+  --shadow-sm:     0 2px 8px rgba(46, 31, 20, 0.07);
+  --shadow-md:     0 6px 24px rgba(46, 31, 20, 0.09);
+  --shadow-lg:     0 12px 40px rgba(46, 31, 20, 0.12);
+  --shadow-xl:     0 24px 60px rgba(46, 31, 20, 0.14);
+
+  /* ── TRANSITIONS ── */
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.4s ease;
+
+  /* ── LAYOUT ── */
+  --max-width:     1320px;
+  --nav-height:    64px;
+}
+
+/* ── UTILITY CLASSES ── */
+.text-tomato  { color: var(--tomato); }
+.text-sage    { color: var(--sage); }
+.text-sun     { color: var(--sun); }
+.text-muted   { color: var(--muted); }
+.text-brown   { color: var(--brown); }
+
+.bg-cream      { background: var(--cream); }
+.bg-warm-white { background: var(--warm-white); }
+.bg-linen      { background: var(--linen); }
+
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-accent  { font-family: var(--font-accent); }
+
+/* Badge tier utility classes */
+.badge-bronze { background: rgba(205,127,50,.12); color: var(--bronze); border: 1.5px solid rgba(205,127,50,.3); }
+.badge-silver { background: rgba(155,155,155,.12); color: var(--silver); border: 1.5px solid rgba(155,155,155,.3); }
+.badge-gold   { background: rgba(212,160,23,.12);  color: var(--gold);   border: 1.5px solid rgba(212,160,23,.3); }
+.badge-elite  { background: rgba(44,62,122,.10);   color: var(--elite);  border: 1.5px solid rgba(44,62,122,.25); }
