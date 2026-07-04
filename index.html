@@ -404,6 +404,37 @@ nav{
   font-size:.65rem;font-weight:800;flex-shrink:0;margin-top:1px;
 }
 
+/* ── SEALED & VERIFIED ── */
+.seal-section{padding:6rem 3rem;background:var(--warm-white)}
+.seal-inner{max-width:1200px;margin:0 auto}
+.seal-top{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center}
+.seal-photo{display:flex;justify-content:center}
+.seal-photo img{width:auto;max-width:100%;max-height:520px;height:auto;object-fit:contain;display:block;
+  filter:drop-shadow(0 18px 40px rgba(46,31,20,.14))}
+.seal-copy .sec-sub{margin-bottom:1.6rem}
+.seal-points{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-bottom:.5rem}
+.seal-points li{display:flex;align-items:flex-start;gap:.7rem;font-size:.9rem;color:var(--brown-mid);line-height:1.55}
+.seal-points .pf-check{background:var(--tomato);color:#fff}
+/* step cards */
+.seal-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
+.seal-card{
+  background:#fff;border-radius:20px;padding:1.6rem 1.4rem;
+  border:1.5px solid var(--border);position:relative;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.seal-card:hover{transform:translateY(-5px);box-shadow:var(--card-shadow);border-color:var(--tomato)}
+.seal-step-n{
+  position:absolute;top:1.1rem;right:1.2rem;
+  font-family:'Lora',serif;font-weight:700;font-size:1rem;color:var(--border);
+}
+.seal-ic{
+  width:52px;height:52px;border-radius:14px;background:var(--tomato-pale);
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;
+}
+.seal-ic svg{width:28px;height:28px}
+.seal-card h4{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:.4rem}
+.seal-card p{font-size:.82rem;line-height:1.6;color:var(--muted)}
+
 /* ── HOW IT WORKS ── */
 .hiw-section{padding:6rem 3rem;background:var(--cream)}
 .hiw-inner{max-width:1200px;margin:0 auto}
@@ -502,6 +533,8 @@ footer{
   .food-tile{height:200px}
   .cat-grid{grid-template-columns:repeat(4,1fr)}
   .containers-inner{grid-template-columns:1fr;gap:3rem}
+  .seal-top{grid-template-columns:1fr;gap:2.5rem}
+  .seal-steps{grid-template-columns:repeat(2,1fr)}
   .map-layout{grid-template-columns:1fr}
 }
 @media(max-width:900px){
@@ -510,7 +543,7 @@ footer{
   .hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}
   .chefs-grid{grid-template-columns:1fr 1fr}
   .hiw-grid{grid-template-columns:1fr 1fr}
-  .food-section,.map-section,.chefs-section,.containers-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
+  .food-section,.map-section,.chefs-section,.containers-section,.seal-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
   .cat-section{padding:4rem 1.5rem 1rem}
   .cat-grid{grid-template-columns:repeat(3,1fr)}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
@@ -522,6 +555,7 @@ footer{
   .hiw-grid{grid-template-columns:1fr}
   .container-collage{grid-template-columns:1fr}
   .ct-main,.ct-sub{grid-column:unset}
+  .seal-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -1207,7 +1241,7 @@ footer{
     <div style="position:relative">
       <div class="container-collage">
         <div class="ct-img ct-single">
-          <img src="assets/containers1.png" alt="Quzyn-branded takeout box, soup cup, and kraft bag" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
+          <img src="assets/containers1.jpg" alt="Quzyn-branded takeout box, soup cup, and kraft bag" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
         </div>
       </div>
     </div>
@@ -1236,6 +1270,70 @@ footer{
 
       <div style="margin-top:2rem">
         <a href="#join" class="btn-red">Claim your free kit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEALED & VERIFIED -->
+<section id="verified" class="seal-section reveal">
+  <div class="seal-inner">
+    <div class="seal-top">
+      <div class="seal-photo">
+        <img src="assets/qr-label.jpg" alt="Quzyn tamper-evident QR label sealing a delivery bag, signed by Chef Aisha" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
+      </div>
+      <div class="seal-copy">
+        <div class="sec-tag">Trust in every order</div>
+        <h2 class="sec-h2">Sealed, signed &amp; <em>verified</em></h2>
+        <p class="sec-sub">Every Quzyn order is closed with a tamper-evident label across the mouth of the bag — carrying your chef's name and a unique QR code. It's proof of who cooked your meal, a digital receipt, and one-tap delivery confirmation, all in one.</p>
+        <ul class="seal-points">
+          <li><div class="pf-check">✓</div>Tamper-evident seal across the bag — you'll know if it was opened</li>
+          <li><div class="pf-check">✓</div>Your chef's name and photo, printed right on the label</li>
+          <li><div class="pf-check">✓</div>A unique QR code for every single order — no two alike</li>
+          <li><div class="pf-check">✓</div>Scan to view the order, get your receipt, and confirm you received it</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="seal-steps">
+      <div class="seal-card">
+        <div class="seal-step-n">01</div>
+        <div class="seal-ic">👩‍🍳</div>
+        <h4>Prepared by Chef</h4>
+        <p>Every meal is prepared with care by our verified home chefs.</p>
+      </div>
+      <div class="seal-card">
+        <div class="seal-step-n">02</div>
+        <div class="seal-ic">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#D94F2B" aria-hidden="true">
+            <path d="M8 8h30v30H8V8zm7 7v16h16V15H15z"/>
+            <rect x="20" y="20" width="6" height="6"/>
+            <path d="M62 8h30v30H62V8zm7 7v16h16V15H69z"/>
+            <rect x="74" y="20" width="6" height="6"/>
+            <path d="M8 62h30v30H8V62zm7 7v16h16V69H15z"/>
+            <rect x="20" y="74" width="6" height="6"/>
+            <rect x="50" y="8" width="6" height="6"/><rect x="50" y="20" width="6" height="6"/>
+            <rect x="50" y="34" width="6" height="12"/><rect x="62" y="50" width="6" height="6"/>
+            <rect x="50" y="62" width="6" height="6"/><rect x="74" y="50" width="6" height="6"/>
+            <rect x="86" y="62" width="6" height="6"/><rect x="62" y="74" width="6" height="6"/>
+            <rect x="74" y="74" width="18" height="6"/><rect x="86" y="80" width="6" height="12"/>
+            <rect x="62" y="86" width="6" height="6"/><rect x="74" y="86" width="6" height="6"/>
+          </svg>
+        </div>
+        <h4>Unique QR Code</h4>
+        <p>Each label carries a unique QR code tied to your order.</p>
+      </div>
+      <div class="seal-card">
+        <div class="seal-step-n">03</div>
+        <div class="seal-ic">📱</div>
+        <h4>View &amp; Verify</h4>
+        <p>Scan to view the chef's profile and your full order details.</p>
+      </div>
+      <div class="seal-card">
+        <div class="seal-step-n">04</div>
+        <div class="seal-ic">✅</div>
+        <h4>Confirm Received</h4>
+        <p>Once your order arrives, scan again to confirm and rate your chef.</p>
       </div>
     </div>
   </div>
