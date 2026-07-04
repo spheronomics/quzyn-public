@@ -209,6 +209,38 @@ nav{
 .ft-wide{grid-column:span 2}
 .ft-tall{grid-row:span 2}
 
+/* ── CATEGORIES ── */
+.cat-section{padding:6rem 3rem 2rem;background:var(--cream)}
+.cat-inner{max-width:1320px;margin:0 auto}
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:1rem;margin-top:2.5rem;
+}
+.cat-card{
+  position:relative;border-radius:18px;overflow:hidden;
+  height:210px;cursor:pointer;display:block;text-decoration:none;
+  box-shadow:var(--card-shadow);
+  transition:transform .3s,box-shadow .3s;
+}
+.cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(46,31,20,.18)}
+.cat-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.cat-card:hover img{transform:scale(1.08)}
+.cat-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(46,31,20,.85) 0%,rgba(46,31,20,.18) 55%,rgba(46,31,20,0) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;
+}
+.cat-emoji{
+  position:absolute;top:.65rem;left:.65rem;
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;font-size:1.15rem;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+.cat-name{font-family:'Lora',serif;color:white;font-weight:700;font-size:1.02rem;line-height:1.15}
+.cat-count{font-size:.72rem;color:rgba(255,255,255,.78);margin-top:.25rem;font-weight:600}
+
 /* ── MAP SECTION ── */
 .map-section{padding:6rem 3rem;background:var(--cream)}
 .map-inner{max-width:1300px;margin:0 auto}
@@ -463,6 +495,7 @@ footer{
   .food-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:unset}
   .ft-wide,.ft-tall{grid-column:unset;grid-row:unset}
   .food-tile{height:200px}
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
   .containers-inner{grid-template-columns:1fr;gap:3rem}
   .map-layout{grid-template-columns:1fr}
 }
@@ -473,11 +506,14 @@ footer{
   .chefs-grid{grid-template-columns:1fr 1fr}
   .hiw-grid{grid-template-columns:1fr 1fr}
   .food-section,.map-section,.chefs-section,.containers-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
+  .cat-section{padding:4rem 1.5rem 1rem}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
   .footer-links{justify-content:center}
 }
 @media(max-width:600px){
   .chefs-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
   .hiw-grid{grid-template-columns:1fr}
   .container-collage{grid-template-columns:1fr}
   .ct-main,.ct-sub{grid-column:unset}
@@ -492,6 +528,7 @@ footer{
     <img src="/mnt/user-data/uploads/1783174639250_image.png" alt="Quzyn">
   </a>
   <ul class="nav-links">
+    <li><a href="#categories">Categories</a></li>
     <li><a href="#food">Browse food</a></li>
     <li><a href="#chefs">Meet cooks</a></li>
     <li><a href="#containers">Free kit</a></li>
@@ -604,6 +641,83 @@ footer{
     <span class="marquee-item">🇲🇦 Chicken Tagine <span class="msep">✦</span></span>
   </div>
 </div>
+
+<!-- FOOD CATEGORIES -->
+<section id="categories" class="cat-section">
+  <div class="cat-inner">
+    <div class="reveal">
+      <div class="sec-tag">Whatever you're in the mood for</div>
+      <h2 class="sec-h2">Browse by <em>category</em></h2>
+      <p class="sec-sub">From a full home-cooked dinner to a sweet treat or a fresh-pressed drink — find exactly what you're craving from cooks near you.</p>
+    </div>
+    <div class="cat-grid reveal">
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=85" alt="Main dishes">
+        <div class="cat-emoji">🍽️</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Main Dishes</span>
+          <span class="cat-count">240+ dishes</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=85" alt="Desserts">
+        <div class="cat-emoji">🍰</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Desserts</span>
+          <span class="cat-count">90+ treats</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=500&q=85" alt="Appetizers">
+        <div class="cat-emoji">🥟</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Appetizers</span>
+          <span class="cat-count">120+ starters</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=85" alt="Pastries">
+        <div class="cat-emoji">🥐</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Pastries</span>
+          <span class="cat-count">60+ bakes</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=85" alt="Drinks">
+        <div class="cat-emoji">🥤</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Drinks</span>
+          <span class="cat-count">50+ drinks</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=500&q=85" alt="Soups">
+        <div class="cat-emoji">🍜</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Soups</span>
+          <span class="cat-count">70+ bowls</span>
+        </div>
+      </a>
+
+      <a href="#food" class="cat-card">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=85" alt="Salads">
+        <div class="cat-emoji">🥗</div>
+        <div class="cat-overlay">
+          <span class="cat-name">Salads</span>
+          <span class="cat-count">80+ fresh</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <!-- FOOD PHOTO GRID -->
 <section id="food" class="food-section">
