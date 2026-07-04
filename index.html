@@ -168,6 +168,9 @@ nav{
   transition:transform .15s,box-shadow .2s;display:inline-block;
 }
 .btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(217,79,43,0.42)}
+.btn-blue{background:#2E74B5;box-shadow:0 4px 20px rgba(46,116,181,.3)}
+.btn-blue:hover{box-shadow:0 8px 28px rgba(46,116,181,.42)}
+.join-apps{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem}
 .btn-outline{
   background:white;color:var(--brown);
   padding:.85rem 1.8rem;border-radius:100px;font-weight:700;font-size:.98rem;
@@ -1450,20 +1453,14 @@ footer{
 <!-- SIGNUP -->
 <section class="signup-section" id="join">
   <div class="signup-inner">
-    <div class="sec-tag" style="display:block;text-align:center;margin-bottom:.4rem">Limited pilot · Spots filling fast</div>
-    <h2 class="signup-h2">Ready to cook —<br>or <em>eat something real?</em></h2>
-    <p class="signup-sub">Join as a home cook (and get your free container kit), or as a food lover ready to discover the best food on your block.</p>
-    <div class="tab-row">
-      <button class="stab active" onclick="setTab(this)">🍴 I want to eat</button>
-      <button class="stab" onclick="setTab(this)">👩‍🍳 I cook at home</button>
-      <button class="stab" onclick="setTab(this)">🏪 Restaurant owner</button>
+    <div class="sec-tag" style="display:block;text-align:center;margin-bottom:.4rem">The Quzyn app is live 🎉</div>
+    <h2 class="signup-h2">Ready to eat —<br>or <em>start earning?</em></h2>
+    <p class="signup-sub">Get the Quzyn app to order fresh, home-cooked food near you — or to start selling from your own kitchen today. Free to join, no waitlist.</p>
+    <div class="join-apps">
+      <a class="btn-red" href="https://www.quzyn.com/InstallBuyer/Index" target="_blank" rel="noopener">🍽️ Order Food</a>
+      <a class="btn-red btn-blue" href="https://www.quzyn.com/InstallProvider/Index" target="_blank" rel="noopener">🍳 Sell Food</a>
     </div>
-    <div class="signup-form">
-      <input type="email" id="email" placeholder="Your email address" autocomplete="email">
-      <button onclick="doSignup()">Join waitlist</button>
-    </div>
-    <div id="signup-msg"></div>
-    <p class="signup-note">No spam. No credit card. We'll only email you about your local launch.</p>
+    <p class="signup-note">Sellers pick <b>home cook</b> or <b>restaurant</b> right in the app · Free to join · No credit card</p>
   </div>
 </section>
 
