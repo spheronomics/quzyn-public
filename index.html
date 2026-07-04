@@ -258,6 +258,36 @@ nav{
 }
 .msep{color:rgba(46,31,20,.35);font-size:.45rem}
 
+/* ── WELCOME PROMO ── */
+.promo-section{padding:4.5rem 3rem;background:linear-gradient(120deg,#D94F2B 0%,#E8631F 58%,#F7A800 100%);overflow:hidden}
+.promo-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center}
+.promo-copy{color:#fff}
+.promo-tag{font-family:'Caveat',cursive;font-size:1.4rem;font-weight:700;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.promo-h2{font-family:'Lora',serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:.9rem}
+.promo-h2 em{font-style:italic}
+.promo-copy>p{font-size:1rem;line-height:1.7;opacity:.96;max-width:470px;margin-bottom:1.6rem}
+.promo-actions{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap}
+.promo-btn{background:#fff;color:var(--tomato);padding:.85rem 1.9rem;border-radius:100px;font-weight:800;font-size:.98rem;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .15s}
+.promo-btn:hover{transform:translateY(-2px)}
+.promo-fine{font-size:.75rem;opacity:.85;margin-top:1rem;color:#fff}
+/* coupon ticket */
+.promo-ticket{display:flex;justify-content:center}
+.ticket{
+  position:relative;background:var(--cream);color:var(--brown);
+  border-radius:18px;padding:1.9rem 2.4rem;text-align:center;min-width:230px;
+  box-shadow:0 22px 55px rgba(46,31,20,.3);
+  transform:rotate(-3deg);
+}
+.ticket::before,.ticket::after{content:'';position:absolute;top:50%;width:26px;height:26px;background:#F7A800;border-radius:50%;transform:translateY(-50%)}
+.ticket::before{left:-14px}
+.ticket::after{right:-14px}
+.ticket-top{font-size:.78rem;font-weight:800;letter-spacing:.16em;color:var(--tomato);text-transform:uppercase}
+.ticket-amt{display:flex;flex-direction:column;align-items:center;margin:.7rem 0}
+.ticket-amt span{font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brown-mid);font-weight:800}
+.ticket-amt b{font-family:'Lora',serif;font-size:3.4rem;color:var(--tomato);line-height:1;margin:.05rem 0}
+.ticket-sub{font-size:.9rem;color:var(--brown-mid);margin-bottom:.9rem}
+.ticket-code{font-size:.74rem;color:var(--muted);border-top:1.5px dashed var(--border);padding-top:.75rem}
+
 /* ── FOOD GRID (real photos) ── */
 .food-section{padding:6rem 3rem;background:var(--warm-white)}
 .food-inner{max-width:1320px;margin:0 auto}
@@ -606,6 +636,9 @@ footer{
   .containers-inner{grid-template-columns:1fr;gap:3rem}
   .seal-top{grid-template-columns:1fr;gap:2.5rem}
   .share-inner{grid-template-columns:1fr;gap:2.8rem}
+  .promo-inner{grid-template-columns:1fr;gap:2.5rem;text-align:center;justify-items:center}
+  .promo-copy>p{margin-left:auto;margin-right:auto}
+  .promo-actions{justify-content:center}
   .seal-steps{grid-template-columns:repeat(2,1fr)}
   .map-layout{grid-template-columns:1fr}
 }
@@ -615,7 +648,7 @@ footer{
   .hero{grid-template-columns:1fr;padding:9.5rem 1.5rem 3rem;gap:2.5rem}
   .chefs-grid{grid-template-columns:1fr 1fr}
   .hiw-grid{grid-template-columns:1fr 1fr}
-  .food-section,.map-section,.chefs-section,.containers-section,.seal-section,.share-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
+  .food-section,.map-section,.chefs-section,.containers-section,.seal-section,.share-section,.hiw-section,.signup-section,.promo-section{padding:4rem 1.5rem}
   .cat-section{padding:4rem 1.5rem 1rem}
   .cat-grid{grid-template-columns:repeat(3,1fr)}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
@@ -718,41 +751,64 @@ footer{
 <!-- MARQUEE -->
 <div class="marquee-band">
   <div class="marquee-inner">
-    <span class="marquee-item">🇺🇸 Texas Smoked Brisket <span class="msep">✦</span></span>
-    <span class="marquee-item">🇮🇹 Fresh Pasta Ragù <span class="msep">✦</span></span>
-    <span class="marquee-item">🇳🇬 Party Jollof Rice <span class="msep">✦</span></span>
-    <span class="marquee-item">🇨🇳 Pork Dumplings <span class="msep">✦</span></span>
-    <span class="marquee-item">🇹🇭 Green Curry <span class="msep">✦</span></span>
-    <span class="marquee-item">🇻🇳 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
-    <span class="marquee-item">🇺🇸 Honey Fried Chicken <span class="msep">✦</span></span>
-    <span class="marquee-item">🇮🇳 Lamb Biryani <span class="msep">✦</span></span>
-    <span class="marquee-item">🇲🇽 Birria Tacos <span class="msep">✦</span></span>
-    <span class="marquee-item">🇱🇧 Mezze Platter <span class="msep">✦</span></span>
-    <span class="marquee-item">🇯🇵 Tonkotsu Ramen <span class="msep">✦</span></span>
-    <span class="marquee-item">🇪🇹 Doro Wat <span class="msep">✦</span></span>
-    <span class="marquee-item">🇰🇷 Galbi & Kimchi <span class="msep">✦</span></span>
-    <span class="marquee-item">🇵🇪 Ceviche Clásico <span class="msep">✦</span></span>
-    <span class="marquee-item">🇬🇷 Lamb Kleftiko <span class="msep">✦</span></span>
-    <span class="marquee-item">🇲🇦 Chicken Tagine <span class="msep">✦</span></span>
+    <span class="marquee-item">🥩 Texas Smoked Brisket <span class="msep">✦</span></span>
+    <span class="marquee-item">🍝 Fresh Pasta Ragù <span class="msep">✦</span></span>
+    <span class="marquee-item">🍚 Party Jollof Rice <span class="msep">✦</span></span>
+    <span class="marquee-item">🥟 Pork Dumplings <span class="msep">✦</span></span>
+    <span class="marquee-item">🍛 Thai Green Curry <span class="msep">✦</span></span>
+    <span class="marquee-item">🍜 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
+    <span class="marquee-item">🍗 Honey Fried Chicken <span class="msep">✦</span></span>
+    <span class="marquee-item">🍛 Lamb Biryani <span class="msep">✦</span></span>
+    <span class="marquee-item">🌮 Birria Tacos <span class="msep">✦</span></span>
+    <span class="marquee-item">🥙 Mezze Platter <span class="msep">✦</span></span>
+    <span class="marquee-item">🍜 Tonkotsu Ramen <span class="msep">✦</span></span>
+    <span class="marquee-item">🍲 Ethiopian Doro Wat <span class="msep">✦</span></span>
+    <span class="marquee-item">🍖 Galbi &amp; Kimchi <span class="msep">✦</span></span>
+    <span class="marquee-item">🐟 Ceviche Clásico <span class="msep">✦</span></span>
+    <span class="marquee-item">🍖 Lamb Kleftiko <span class="msep">✦</span></span>
+    <span class="marquee-item">🍲 Chicken Tagine <span class="msep">✦</span></span>
     <!-- duplicate -->
-    <span class="marquee-item">🇺🇸 Texas Smoked Brisket <span class="msep">✦</span></span>
-    <span class="marquee-item">🇮🇹 Fresh Pasta Ragù <span class="msep">✦</span></span>
-    <span class="marquee-item">🇳🇬 Party Jollof Rice <span class="msep">✦</span></span>
-    <span class="marquee-item">🇨🇳 Pork Dumplings <span class="msep">✦</span></span>
-    <span class="marquee-item">🇹🇭 Green Curry <span class="msep">✦</span></span>
-    <span class="marquee-item">🇻🇳 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
-    <span class="marquee-item">🇺🇸 Honey Fried Chicken <span class="msep">✦</span></span>
-    <span class="marquee-item">🇮🇳 Lamb Biryani <span class="msep">✦</span></span>
-    <span class="marquee-item">🇲🇽 Birria Tacos <span class="msep">✦</span></span>
-    <span class="marquee-item">🇱🇧 Mezze Platter <span class="msep">✦</span></span>
-    <span class="marquee-item">🇯🇵 Tonkotsu Ramen <span class="msep">✦</span></span>
-    <span class="marquee-item">🇪🇹 Doro Wat <span class="msep">✦</span></span>
-    <span class="marquee-item">🇰🇷 Galbi & Kimchi <span class="msep">✦</span></span>
-    <span class="marquee-item">🇵🇪 Ceviche Clásico <span class="msep">✦</span></span>
-    <span class="marquee-item">🇬🇷 Lamb Kleftiko <span class="msep">✦</span></span>
-    <span class="marquee-item">🇲🇦 Chicken Tagine <span class="msep">✦</span></span>
+    <span class="marquee-item">🥩 Texas Smoked Brisket <span class="msep">✦</span></span>
+    <span class="marquee-item">🍝 Fresh Pasta Ragù <span class="msep">✦</span></span>
+    <span class="marquee-item">🍚 Party Jollof Rice <span class="msep">✦</span></span>
+    <span class="marquee-item">🥟 Pork Dumplings <span class="msep">✦</span></span>
+    <span class="marquee-item">🍛 Thai Green Curry <span class="msep">✦</span></span>
+    <span class="marquee-item">🍜 Pho Bo — 10hr Broth <span class="msep">✦</span></span>
+    <span class="marquee-item">🍗 Honey Fried Chicken <span class="msep">✦</span></span>
+    <span class="marquee-item">🍛 Lamb Biryani <span class="msep">✦</span></span>
+    <span class="marquee-item">🌮 Birria Tacos <span class="msep">✦</span></span>
+    <span class="marquee-item">🥙 Mezze Platter <span class="msep">✦</span></span>
+    <span class="marquee-item">🍜 Tonkotsu Ramen <span class="msep">✦</span></span>
+    <span class="marquee-item">🍲 Ethiopian Doro Wat <span class="msep">✦</span></span>
+    <span class="marquee-item">🍖 Galbi &amp; Kimchi <span class="msep">✦</span></span>
+    <span class="marquee-item">🐟 Ceviche Clásico <span class="msep">✦</span></span>
+    <span class="marquee-item">🍖 Lamb Kleftiko <span class="msep">✦</span></span>
+    <span class="marquee-item">🍲 Chicken Tagine <span class="msep">✦</span></span>
   </div>
 </div>
+
+<!-- WELCOME PROMO -->
+<section class="promo-section reveal">
+  <div class="promo-inner">
+    <div class="promo-copy">
+      <div class="promo-tag">🎁 New here? Eat on us</div>
+      <h2 class="promo-h2">Your first meal could be <em>free.</em></h2>
+      <p>To get things cooking, we're giving new customers a welcome promo code — anywhere from a tasty discount to your <b>entire order on the house</b>. Sign up, browse your neighborhood, and drop the code in at checkout.</p>
+      <div class="promo-actions">
+        <a class="promo-btn" href="https://www.quzyn.com/InstallBuyer/Index" target="_blank" rel="noopener">🍽️ Get the app &amp; claim</a>
+      </div>
+      <p class="promo-fine">Promo value varies by code · while launch offers last · new customers only.</p>
+    </div>
+    <div class="promo-ticket">
+      <div class="ticket">
+        <div class="ticket-top">Welcome Offer</div>
+        <div class="ticket-amt"><span>up to</span><b>100%</b><span>off</span></div>
+        <div class="ticket-sub">your first order</div>
+        <div class="ticket-code">New customers · claim in the app</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOD CATEGORIES -->
 <section id="categories" class="cat-section">
