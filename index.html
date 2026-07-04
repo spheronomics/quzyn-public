@@ -511,6 +511,33 @@ nav{
 .seal-card h4{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:.4rem}
 .seal-card p{font-size:.82rem;line-height:1.6;color:var(--muted)}
 
+/* ── SHAREABLE LINKS ── */
+.share-section{padding:6rem 3rem;background:linear-gradient(160deg,var(--sage-pale) 0%,var(--warm-white) 100%)}
+.share-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center}
+.share-copy .sec-sub{margin-bottom:1.5rem}
+.share-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.share-list li{display:flex;gap:.7rem;font-size:.9rem;line-height:1.55;color:var(--brown-mid)}
+.share-list .si{font-size:1.05rem;flex-shrink:0;width:1.5rem;text-align:center;margin-top:.05rem}
+.share-list em{font-style:italic;color:var(--tomato);font-weight:700}
+.share-note{margin-top:1.4rem;font-size:.8rem;line-height:1.5;color:var(--brown-mid);background:rgba(255,255,255,.65);border-radius:12px;padding:.75rem 1rem;border:1px solid var(--border)}
+/* shared-link preview visual */
+.share-visual{position:relative;display:flex;justify-content:center}
+.share-bubble{background:#fff;border-radius:22px;box-shadow:var(--card-shadow);padding:1.1rem;max-width:355px;width:100%;border:1px solid var(--border)}
+.share-cap{font-size:.9rem;color:var(--brown);margin-bottom:.75rem;line-height:1.5;font-weight:600}
+.share-card{display:block;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;transition:box-shadow .2s}
+.share-card:hover{box-shadow:0 10px 26px rgba(46,31,20,.12)}
+.share-card-img{height:168px;overflow:hidden}
+.share-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.share-card-body{padding:.75rem .9rem}
+.share-card-title{font-family:'Lora',serif;font-weight:700;font-size:.98rem;color:var(--brown);line-height:1.25}
+.share-card-meta{font-size:.79rem;color:var(--muted);margin-top:.2rem}
+.share-card-foot{display:flex;align-items:center;gap:.4rem;margin-top:.55rem;font-size:.72rem;color:var(--muted)}
+.share-card-foot img{height:16px;width:auto}
+.share-url{margin-top:.7rem;font-size:.8rem;color:var(--sage);font-weight:700;word-break:break-all}
+.share-chip{position:absolute;background:#fff;border-radius:100px;padding:.42rem .85rem;font-size:.76rem;font-weight:800;box-shadow:0 8px 24px rgba(46,31,20,.14);display:flex;align-items:center;gap:.35rem;border:1px solid var(--border);z-index:2}
+.chip-ig{top:-16px;left:2%;color:#C13584;animation:float 4s ease-in-out infinite}
+.chip-wa{bottom:6%;right:-2%;color:#128C4B;animation:float 4.6s ease-in-out infinite}
+
 /* ── HOW IT WORKS ── */
 .hiw-section{padding:6rem 3rem;background:var(--cream)}
 .hiw-inner{max-width:1200px;margin:0 auto}
@@ -578,6 +605,7 @@ footer{
   .cat-grid{grid-template-columns:repeat(4,1fr)}
   .containers-inner{grid-template-columns:1fr;gap:3rem}
   .seal-top{grid-template-columns:1fr;gap:2.5rem}
+  .share-inner{grid-template-columns:1fr;gap:2.8rem}
   .seal-steps{grid-template-columns:repeat(2,1fr)}
   .map-layout{grid-template-columns:1fr}
 }
@@ -587,7 +615,7 @@ footer{
   .hero{grid-template-columns:1fr;padding:9.5rem 1.5rem 3rem;gap:2.5rem}
   .chefs-grid{grid-template-columns:1fr 1fr}
   .hiw-grid{grid-template-columns:1fr 1fr}
-  .food-section,.map-section,.chefs-section,.containers-section,.seal-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
+  .food-section,.map-section,.chefs-section,.containers-section,.seal-section,.share-section,.hiw-section,.signup-section{padding:4rem 1.5rem}
   .cat-section{padding:4rem 1.5rem 1rem}
   .cat-grid{grid-template-columns:repeat(3,1fr)}
   footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
@@ -1380,6 +1408,42 @@ footer{
         <h4>Confirm Received</h4>
         <p>Once your order arrives, scan again to confirm and rate your chef.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHAREABLE LINKS -->
+<section id="share" class="share-section reveal">
+  <div class="share-inner">
+    <div class="share-visual">
+      <div class="share-chip chip-ig">📸 Instagram</div>
+      <div class="share-chip chip-wa">💬 WhatsApp</div>
+      <div class="share-bubble">
+        <p class="share-cap">🔥 Butter chicken, made fresh tonight — tap to order 👇</p>
+        <a class="share-card" href="#" onclick="return false">
+          <div class="share-card-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=85" alt="Butter chicken dish"></div>
+          <div class="share-card-body">
+            <div class="share-card-title">Butter Chicken · Priya's Kitchen</div>
+            <div class="share-card-meta">$16 · Home-cooked · ★ 4.9 · 0.8 mi away</div>
+            <div class="share-card-foot"><img src="assets/quzyn-logo.png" alt="Quzyn"> quzyn.com</div>
+          </div>
+        </a>
+        <div class="share-url">quzyn.com/d/2w4ht5vw</div>
+      </div>
+    </div>
+    <div class="share-copy">
+      <div class="sec-tag">For home chefs &amp; restaurants</div>
+      <h2 class="sec-h2">Every link you share is <em>free advertising</em></h2>
+      <p class="sec-sub">Share a single dish — or your whole menu — to Instagram, WhatsApp, Facebook, or a quick text. One tap opens it right in Quzyn, ready to order, with no app to install. Every share is a new customer finding your kitchen, at zero cost.</p>
+      <ul class="share-list">
+        <li><span class="si">📲</span>Post it anywhere — Instagram, WhatsApp, Facebook, X, SMS or email.</li>
+        <li><span class="si">⚡</span>One tap opens your dish instantly — no download, nothing to sign up for just to browse.</li>
+        <li><span class="si">🖼️</span>Your link unfurls into a rich preview card — photo, price, your kitchen. That card <em>is</em> the ad.</li>
+        <li><span class="si">🛒</span>Customers add to cart without logging in — they only sign in at checkout.</li>
+        <li><span class="si">📌</span>A permanent storefront link for your Instagram bio — rename it anytime and the old one keeps working.</li>
+        <li><span class="si">📷</span>A Share button on every dish opens your phone's share sheet with a ready-made caption and a QR code.</li>
+      </ul>
+      <p class="share-note">💡 On Instagram, links are clickable in your <b>bio</b>, <b>Stories</b> and <b>DMs</b> — and the QR code covers everywhere else.</p>
     </div>
   </div>
 </section>
