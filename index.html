@@ -544,38 +544,6 @@ nav{
 }
 .signup-h2 em{font-style:italic;color:var(--tomato)}
 .signup-sub{font-size:.98rem;line-height:1.75;color:var(--brown-mid);margin-bottom:2.2rem}
-.tab-row{
-  display:inline-flex;gap:.4rem;
-  background:white;border:1.5px solid var(--border);
-  border-radius:100px;padding:.3rem;margin-bottom:1.4rem;
-}
-.stab{
-  padding:.48rem 1.2rem;border-radius:100px;border:none;
-  font-family:'Nunito',sans-serif;font-size:.83rem;font-weight:700;
-  cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;
-}
-.stab.active{background:var(--tomato);color:white}
-.stab:hover:not(.active){color:var(--brown)}
-.signup-form{
-  display:flex;gap:.4rem;
-  background:white;border:2px solid var(--border);
-  border-radius:100px;padding:.4rem;max-width:480px;margin:0 auto;
-  box-shadow:0 8px 30px rgba(46,31,20,.08);
-}
-.signup-form input{
-  flex:1;background:transparent;border:none;outline:none;
-  color:var(--brown);font-family:'Nunito',sans-serif;font-size:.93rem;
-  padding:.55rem 1rem;
-}
-.signup-form input::placeholder{color:rgba(122,92,74,.45)}
-.signup-form button{
-  background:var(--tomato);color:white;border:none;
-  padding:.6rem 1.4rem;border-radius:100px;
-  font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;
-  cursor:pointer;transition:transform .15s,background .2s;white-space:nowrap;
-}
-.signup-form button:hover{background:#B8401F;transform:scale(1.03)}
-#signup-msg{margin-top:.8rem;font-size:.83rem;color:var(--sage);font-weight:600;min-height:1.1em}
 .signup-note{margin-top:.7rem;font-size:.73rem;color:var(--muted)}
 
 /* ── FOOTER ── */
@@ -1550,26 +1518,6 @@ function openGS(){document.getElementById('getStarted').classList.add('open')}
 function closeGS(){document.getElementById('getStarted').classList.remove('open')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGS()});
 
-// Signup tabs
-function setTab(btn){
-  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('signup-msg').textContent='';
-}
-function doSignup(){
-  const v=document.getElementById('email').value.trim();
-  const m=document.getElementById('signup-msg');
-  const activeTab=document.querySelector('.stab.active').textContent;
-  if(!v||!v.includes('@')){m.style.color='var(--tomato)';m.textContent='Please enter a valid email.';return}
-  const isCook=activeTab.includes('cook');
-  m.style.color='var(--sage)';
-  m.textContent=isCook
-    ? "✓ You're on the list! We'll reach out about your free container kit when we launch near you."
-    : "✓ You're on the list! We'll reach out when Quzyn opens near you.";
-  document.getElementById('email').value='';
-  const btn=document.querySelector('.signup-form button');
-  btn.textContent="You're in! ✓";btn.style.background='var(--sage)';
-}
 </script>
 </body>
 </html>
