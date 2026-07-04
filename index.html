@@ -368,6 +368,9 @@ nav{
 .ct-img img{width:100%;height:100%;object-fit:cover;display:block}
 .ct-main{grid-column:1/3;height:220px}
 .ct-sub{height:170px}
+/* single product shot */
+.ct-single{grid-column:1/3;background:transparent;box-shadow:none;overflow:visible;display:flex;justify-content:center}
+.ct-single img{width:auto;max-width:100%;max-height:480px;height:auto;object-fit:contain;display:block}
 /* Quzyn logo watermark on containers */
 .ct-logo-badge{
   position:absolute;top:10px;left:10px;
@@ -1203,18 +1206,8 @@ footer{
   <div class="containers-inner">
     <div style="position:relative">
       <div class="container-collage">
-        <div class="ct-img ct-main">
-          <img src="assets/container-kraft-salad.png" alt="Eco kraft Quzyn container with salad" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
-        </div>
-        <div class="ct-img ct-sub">
-          <img src="assets/container-takeout-boxes.png" alt="White takeout boxes with food" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
-        </div>
-        <div class="ct-img ct-sub">
-          <img src="assets/container-soup-cup.png" alt="Soup cup with chicken noodle" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
-        </div>
-        <div class="ct-logo-badge">
-          <img src="assets/quzyn-logo.png" alt="Quzyn logo">
-          <span>Your brand,<br>on every order</span>
+        <div class="ct-img ct-single">
+          <img src="assets/containers1.png" alt="Quzyn-branded takeout box, soup cup, and kraft bag" onerror="this.onerror=null;this.src='assets/quzyn-logo.png';this.classList.add('logo-fallback')">
         </div>
       </div>
     </div>
